@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Zillow</title>
+</head>
+
+<body>
+<h1>Zillow</h1>
+<button id="button">Get Info</button>
+<br>
+<a href="https://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1fm57445z4b_1sm5d&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA" target="_blank">Link to Zillow</a>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+$("#button").on("click",function() {
+    
+// 	var invocation = new XMLHttpRequest();
+// var url = 'https://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1fm57445z4b_1sm5d&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA';
+   
+// (function callOtherDomain() {
+//     if(invocation) {    
+//     invocation.open('GET', url, true);
+//     invocation.onreadystatechange = handler;
+//     invocation.send();
+//   }
+// })();
+
+// function handler() {
+ 	var queryURL = "https://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1fm57445z4b_1sm5d&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA";
+
+	$.ajax({
+	  url: queryURL,
+	  method: "GET"
+	  // dataType: "jsonp"
+	}).done(function(response) {
+	  console.log(response);  
+	});
+
+	// var queryURL = "http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1fm57445z4b_1sm5d&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA";
+
+	// $.ajax({
+	//   url: queryURL,
+	//   method: "GET"
+	// }).done(function(response) {
+	//   console.log(response);  
+	// });
+});
+  </script>
+  
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+<!-- var invocation = new XMLHttpRequest();
+var url = 'http://bar.other/resources/public-data/';
+   
+function callOtherDomain() {
+  if(invocation) {    
+    invocation.open('GET', url, true);
+    invocation.onreadystatechange = handler;
+    invocation.send(); 
+  }
+} -->
